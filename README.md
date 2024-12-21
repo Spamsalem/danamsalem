@@ -1,2 +1,0 @@
-# danamsalem
-Dan Amsalem
