@@ -11,19 +11,15 @@
             padding: 0;
             height: 100%;
             display: flex;
-            justify-content: center;
+            flex-direction: column;  /* Stack the pages vertically */
             align-items: center;
-            overflow: hidden;
-        }
-        #viewer {
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
+            overflow: auto;
         }
         canvas {
-            width: 100% !important;
-            height: auto !important;
-            display: block; /* Avoid margin around canvas */
+            width: 100% !important;  /* Make canvas fit the width */
+            height: auto !important; /* Maintain aspect ratio */
+            display: block;          /* Remove margin */
+            margin-bottom: 20px;     /* Add space between pages */
         }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.min.js"></script>
@@ -39,8 +35,8 @@
         
         pdfjsLib.getDocument(url).promise.then(pdf => {
             const totalPages = pdf.numPages;
-            let currentPage = 1;
 
+            // Function to render each page
             const renderPage = (pageNum) => {
                 pdf.getPage(pageNum).then(page => {
                     const canvas = document.createElement('canvas');
@@ -51,14 +47,15 @@
                     canvas.width = viewport.width;
 
                     page.render({ canvasContext: context, viewport }).promise.then(() => {
-                        viewerContainer.innerHTML = ''; // Clear the container
-                        viewerContainer.appendChild(canvas); // Append the canvas with the rendered page
+                        viewerContainer.appendChild(canvas); // Append each page below the previous one
                     });
                 });
             };
 
-            // Render the first page with the zoom level
-            renderPage(currentPage);
+            // Render all pages sequentially
+            for (let i = 1; i <= totalPages; i++) {
+                renderPage(i);
+            }
         });
     </script>
 </body>
