@@ -1,78 +1,114 @@
 <!DOCTYPE html>
-<html lang="he">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>קורות חיים – דן אמסלם</title>
+    <title>Dan Amsalem - Resume</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            direction: rtl;
-            line-height: 1.6;
-            margin: 20px;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
         }
         header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
             text-align: center;
-            margin-bottom: 20px;
+        }
+        header h1 {
+            animation: slideIn 2s ease-in-out;
+        }
+        @keyframes slideIn {
+            from {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+        nav {
+            text-align: center;
+            padding: 10px;
+        }
+        nav a {
+            margin: 0 15px;
+            text-decoration: none;
+            color: #333;
+            transition: color 0.3s;
+        }
+        nav a:hover {
+            color: #555;
         }
         section {
-            margin-bottom: 20px;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+            animation: fadeIn 1.5s ease-in-out;
         }
-        h1, h2 {
-            color: #2c3e50;
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
         }
-        ul {
-            list-style: none;
-            padding: 0;
+        h2 {
+            color: #444;
         }
-        ul li {
-            margin-bottom: 10px;
+        footer {
+            text-align: center;
+            padding: 10px;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>דן אמסלם</h1>
-        <p>קצין משוחרר מיחידת דובר צה"ל, שירתי במגוון תפקידים...</p>
-        <p>כפר סבא | 052-3660378 | danamsalemformal@gmail.com</p>
+        <h1>Dan Amsalem</h1>
+        <p>Lieutenant in the IDF Spokesperson's Unit</p>
     </header>
 
-    <section>
-        <h2>מיומנויות</h2>
+    <nav>
+        <a href="#about">About Me</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            My name is Dan Amsalem. I currently serve as a Lieutenant in the IDF Spokesperson's Unit, where I command the 'Control' broadcast room and media archive, and act as Deputy Head of the Visual Communications Department. 
+        </p>
+    </section>
+
+    <section id="experience">
+        <h2>Experience</h2>
         <ul>
-            <li>עברית - שפת אם</li>
-            <li>אנגלית - C2 - שליטה מלאה</li>
-            <li>יישומי Office - שליטה מלאה</li>
-            <li>יישומי Adobe - שליטה בינונית</li>
-            <li>מערכות שידור וניהול מדיה - שליטה טובה</li>
-            <li>vMix - שליטה בינונית</li>
-            <li>רשתות חברתיות - שליטה מלאה</li>
+            <li>Commander of the Control Room and Media Archive in the IDF Spokesperson's Unit</li>
+            <li>Deputy Head of the Visual Communications Department</li>
         </ul>
     </section>
 
-    <section>
-        <h2>השכלה ושירות צבאי</h2>
-        <ul>
-            <li>תיכון ע"... (המשך בין ארוך)</li>
-            <li>עד לנהל...</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>ניסיון מקצועי</h2>
-        <ul>
-            <li>2023-2024: מפקד הקונטרול...</li>
-            <li>...</li>
-        </ul>
-    </section>
-
-    <section>
-        <h2>למה דווקאה אתי?</h2>
-        <p>בעל ניסיון מוכח...</p>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>
+            Email: <a href="mailto:dan@danamsalem.com">dan@danamsalem.com</a><br>
+            LinkedIn: <a href="#">linkedin.com/in/danamsalem</a>
+        </p>
     </section>
 
     <footer>
-        <p>שם המלציק: מאור רוזנשטיין...</p>
+        <p>&copy; 2024 Dan Amsalem. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
